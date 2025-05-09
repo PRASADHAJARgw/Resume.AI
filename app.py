@@ -12,8 +12,15 @@ st.subheader("Tips for Using the Application")
 ## Resume Part
 
 st.sidebar.subheader("Upload the Resume")
-resume=st.sidebar.file_uploader(label = "Upload your resume")
-a=read_pdf(resume)
+resume=st.sidebar.file_uploader(label = "Upload your resume",type=['pdf'])
+if resume is not None:
+    # Pass the file-like object to read_pdf
+    a = read_pdf(resume)
+    st.markdown("Resume uploaded successfully!")
+else:
+    a = None
+    st.warning("Please upload a resume.")
+
 notes=f'* **Upload  your resume**:- Please upload your resume. this is GENAI Powered Appilcation. \n\
 * **Job Descreption**:- Copy paste. the job Descreption From JOB boards \n\
 * **Unlease the pover of AI**:- Click the button to generate the analysis. \n\ '

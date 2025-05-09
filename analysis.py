@@ -24,4 +24,4 @@ def generate_analysis(resume_text, job_description):
     Please provide a comprehensive analysis, including strengths, weaknesses, and suggestions for improvement.
     """
     response = model.generate_content(prompt)
-    return (st.write(response.text,resume_text,job_description))
+    return (st.write(response.text))
